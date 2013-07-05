@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\SDL-1.2.15\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL\SDL-1.2.15\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL\SDL-1.2.15\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -69,11 +69,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameApplicationLayer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Ressourcemanager.cpp" />
+    <ClCompile Include="S_EventHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameApplicationLayer.h" />
     <ClInclude Include="Ressourcemanager.h" />
+    <ClInclude Include="S_EventHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

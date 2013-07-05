@@ -1,0 +1,36 @@
+#ifndef GAMEAPPLICATIONLAYER_H_
+#define GAMEAPPLICATIONLAYER_H_
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// In dieser Klasse wird der MainLoop des Spiels als Funktion gespeichert. Sie ist also	   //
+//  die einzige Klasse, die der Main bekannt ist. Weiter Funktionen sind das Speichern des //
+// events für den Eventhandler.In der Main wird ein Objekt dieser Klasse als MainGameSource//													   //
+// gespeichert.																			   //
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "Ressourcemanager.h"
+#include "S_EventHandler.h"
+
+namespace ProjectShipwreckHighClass
+{
+
+	class GameApplicationLayer
+	{
+	private:
+		SDL_Event GameMainEvent;
+		bool b_GameShutDown;
+	public:
+		GameApplicationLayer():b_GameShutDown(false){}//Der Konstruktor der GameApplicationKlasse, er tut eigentlich nichts
+		~GameApplicationLayer(){}//Der Dekonstruktor der GameApplicationKlasse, er tut eigentlich nichts
+		GameApplicationLayer(const GameApplicationLayer &){}// Der Kopierkonstruktor der Klasse GameAppliactionLayer
+		void main_Loop();// Diese Funktion beinhält den Übergeordneten Verlauf des Spiels, das Spiel wird darin ausgeführt
+		void initialize_GameResources();
+		void close_GameResources();
+
+
+	};
+
+}
+
+
+#endif

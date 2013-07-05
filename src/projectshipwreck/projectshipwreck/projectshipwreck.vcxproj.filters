@@ -21,9 +21,21 @@
     <ClCompile Include="Ressourcemanager.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameApplicationLayer.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="S_EventHandler.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ressourcemanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApplicationLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="S_EventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
