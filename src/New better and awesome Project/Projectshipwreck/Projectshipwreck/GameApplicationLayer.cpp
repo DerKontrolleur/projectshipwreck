@@ -19,7 +19,7 @@ void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 {
 	try
 	{
-	RessourceManager::Instance()->LoadContent();
+	S_ResourceManager::get_Instance()->LoadContent();
 	}
 	catch(exception GameInitialization)
 	{

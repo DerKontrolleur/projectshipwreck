@@ -8,7 +8,7 @@
 // gespeichert.																			   //
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "Ressourcemanager.h"
+#include "S_Resourcemanager.h"
 #include "S_EventHandler.h"
 
 namespace ProjectShipwreckHighClass
