@@ -106,7 +106,7 @@ void S_ResourceManager::LoadContent() {
 
 
 void S_ResourceManager::Clean() {
-	if(this->Pictures.size() > 0) {
+	/*if(this->Pictures.size() > 0) {
 		for(this->pictures_it = this->Pictures.begin(); this->pictures_it != this->Pictures.end(); this->pictures_it++) {
 			SDL_FreeSurface(this->pictures_it->second);
 		}
@@ -122,7 +122,7 @@ void S_ResourceManager::Clean() {
 		for(this->sounds_it = this->Sounds.begin(); this->sounds_it != Sounds.end(); this->sounds_it++) {
 			Mix_FreeChunk(this->sounds_it->second);
 		}
-	}
+	}*/
 
 	this->Pictures.clear();
 	this->Music.clear();

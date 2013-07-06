@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 #include "S_ResourceManager.h"
+#include "S_EventHandler.h"
 
 namespace ProjectShipwreckLowClass
 {
