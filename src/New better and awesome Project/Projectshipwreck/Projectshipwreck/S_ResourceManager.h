@@ -22,14 +22,14 @@ namespace ProjectShipwreckHighClass {
 	class S_ResourceManager
 	{
 	private:
-		SDL_Surface * Screen = NULL;	// A pointer to the SDL_Surface that saves the screen
-		Mix_Music* music = NULL;	// A pointer to the SDL_Surface that saves the game music
+		SDL_Surface * screen;	// A pointer to the SDL_Surface that saves the screen
+		Mix_Music* music;	// A pointer to the SDL_Surface that saves the game music
 
 		// Sounds
-		Mix_Chunk* scratch = NULL;
-		Mix_Chunk* high = NULL;
-		Mix_Chunk* med = NULL;
-		Mix_Chunk* low = NULL;
+		Mix_Chunk* scratch;
+		Mix_Chunk* high;
+		Mix_Chunk* med;
+		Mix_Chunk* low;
 
 		unordered_map<string, SDL_Surface*> Pictures;	// Used to get pictures with a keyword
 
@@ -47,7 +47,7 @@ namespace ProjectShipwreckHighClass {
 
 			// Try to get the screen
 			try {
-				this->Screen = SDL_SetVideoMode(0, 0, 32, SDL_SWSURFACE | SDL_RESIZABLE);
+				this->screen = SDL_SetVideoMode(0, 0, 32, SDL_SWSURFACE | SDL_RESIZABLE);
 			}
 			catch (exception getScreen) {
 				cout << "S_ResourceManager::Constructor: error getting screen" << endl;
@@ -76,10 +76,10 @@ namespace ProjectShipwreckHighClass {
 		void LoadSound();
 		void ApplyPicture(int positionX, int positionY, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip = NULL);
 		void LoadContent(); // Call once at the beginning to load everything
-		void UpadteScreen() { SDL_Flip(this->Screen); } // Call after any picture is changed
+		void UpadteScreen() { SDL_Flip(this->screen); } // Call after any picture is changed
 
-		SDL_Surface* GetScreen() const { return this->Screen; }
-		void SetScreen(SDL_Surface* Screen) { this->Screen = Screen; }
+		SDL_Surface* GetScreen() const { return this->screen; }
+		void SetScreen(SDL_Surface* screen) { this->screen = screen; }
 
 		SDL_Surface* GetPicture(string key) { return this->Pictures.at(key); }
 	};
