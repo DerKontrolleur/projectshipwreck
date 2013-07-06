@@ -21,6 +21,8 @@ void S_ResourceManager::LoadImage(e_Image key, string filename) {
 	}
 
 	this->Pictures.insert(make_pair(key, optimizedImage));
+	SDL_FreeSurface( loadedImage );
+	SDL_FreeSurface( optimizedImage );
 }
 
 

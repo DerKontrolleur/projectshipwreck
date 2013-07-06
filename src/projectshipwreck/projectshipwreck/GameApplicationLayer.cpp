@@ -17,19 +17,12 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 
 void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 {
-	try
-	{
-		S_ResourceManager::get_Instance()->SetScreen( 300,300,32 );
-		S_ResourceManager::get_Instance()->SetCaption( "projectshipwreck" );
-		S_ResourceManager::get_Instance()->SetTextColor( 255,255,255 );
-		S_ResourceManager::get_Instance()->LoadContent();
-		S_GameModes::get_Instance()->initialize();
-		S_EventHandler::get_Instance()->initialize();
-	}
-	catch(exception GameInitialization)
-	{
-		cout << "GameInitialization failed badly!" << endl;
-	}
+	S_ResourceManager::get_Instance()->SetScreen( 300,300,32 );
+	S_ResourceManager::get_Instance()->SetCaption( "projectshipwreck" );
+	S_ResourceManager::get_Instance()->SetTextColor( 255,255,255 );
+	S_ResourceManager::get_Instance()->LoadContent();
+	S_GameModes::get_Instance()->initialize();
+	S_EventHandler::get_Instance()->initialize();
 }
 
 void ProjectShipwreckHighClass::GameApplicationLayer::close_GameResources()
