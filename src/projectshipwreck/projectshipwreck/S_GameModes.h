@@ -1,5 +1,10 @@
 #pragma once
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Diese Klasse ist zuständig für das speichern der aktuellen Spielszene.					//
+//Die Datei enthält zusätzlich noch zwei Enumerationen, die den Spielmodus speichern können.//
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 namespace ProjectShipwreckEnumerations
 {
 	enum GAMEMAINMODES {MENUE,DEATH,BOAT,LAND,CLOUDS};
@@ -25,3 +30,6 @@ namespace ProjectShipwreckHighClass
 		void initialize(){}
 	};
 }
+
+
+//------------------------------------------------------END OF FILE--------------------------------------------------------------------------------------

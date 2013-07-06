@@ -86,6 +86,7 @@
     <ClInclude Include="S_Resourcemanager.h" />
     <ClInclude Include="S_EventHandler.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Update.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="S_Resourcemanager.cpp" />
     <ClCompile Include="S_EventHandler.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Update.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

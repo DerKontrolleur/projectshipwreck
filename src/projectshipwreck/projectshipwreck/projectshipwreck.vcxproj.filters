@@ -36,6 +36,9 @@
     <ClInclude Include="S_GameModes.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Update.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp">
@@ -51,6 +54,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Update.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
