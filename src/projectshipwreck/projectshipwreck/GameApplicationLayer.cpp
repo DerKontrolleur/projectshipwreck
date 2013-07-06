@@ -6,7 +6,7 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 	{
 		if(SDL_PollEvent(&GameMainEvent))
 		{
-			if(ProjectShipwreckLowClass::S_EventHandler::get_Instance()->is_GameToQuit(GameMainEvent));
+			if(ProjectShipwreckHighClass::S_EventHandler::get_Instance()->is_GameToQuit(GameMainEvent))
 			{
 				b_GameShutDown = true;
 			}
@@ -17,7 +17,16 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 
 void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 {
-	RessourceManager::Instance()->LoadContent();
+	try
+	{
+	S_ResourceManager::get_Instance()->LoadContent();
+	S_GameModes::get_Instance()->initialize();
+	S_EventHandler::get_Instance()->initialize();
+	}
+	catch(exception GameInitialization)
+	{
+		cout << "GameInitialization failed badly!" << endl;
+	}
 }
 
 void ProjectShipwreckHighClass::GameApplicationLayer::close_GameResources()

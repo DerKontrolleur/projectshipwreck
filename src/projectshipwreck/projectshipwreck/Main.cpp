@@ -1,4 +1,4 @@
-#include "Ressourcemanager.h"
+#include "S_Resourcemanager.h"
 #include "GameApplicationLayer.h"
 
 int main(int argc, char* args [])
