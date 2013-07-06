@@ -81,13 +81,13 @@
   <ItemGroup>
     <ClInclude Include="GameApplicationLayer.h" />
     <ClInclude Include="Header.h" />
-    <ClInclude Include="Ressourcemanager.h" />
+    <ClInclude Include="S_Resourcemanager.h" />
     <ClInclude Include="S_EventHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Ressourcemanager.cpp" />
+    <ClCompile Include="S_Resourcemanager.cpp" />
     <ClCompile Include="S_EventHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,10 +21,10 @@
     <ClInclude Include="Header.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Ressourcemanager.h">
+    <ClInclude Include="S_EventHandler.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="S_EventHandler.h">
+    <ClInclude Include="S_Resourcemanager.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClCompile Include="Main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Ressourcemanager.cpp">
+    <ClCompile Include="S_EventHandler.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="S_EventHandler.cpp">
+    <ClCompile Include="S_Resourcemanager.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
