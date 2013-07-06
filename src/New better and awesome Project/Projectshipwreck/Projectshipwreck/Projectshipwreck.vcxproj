@@ -79,16 +79,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="A_Animation.h" />
     <ClInclude Include="GameApplicationLayer.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="S_GameModes.h" />
     <ClInclude Include="S_Resourcemanager.h" />
     <ClInclude Include="S_EventHandler.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="S_Resourcemanager.cpp" />
     <ClCompile Include="S_EventHandler.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

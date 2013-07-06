@@ -1,6 +1,6 @@
 #include "S_EventHandler.h"
 
-bool ProjectShipwreckLowClass::S_EventHandler::is_GameToQuit(SDL_Event & tempEvent)
+bool ProjectShipwreckHighClass::S_EventHandler::is_GameToQuit(SDL_Event & tempEvent)
 {
 	if(tempEvent.type == SDL_QUIT)
 	{

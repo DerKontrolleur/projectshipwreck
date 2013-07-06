@@ -6,7 +6,7 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 	{
 		if(SDL_PollEvent(&GameMainEvent))
 		{
-			if(ProjectShipwreckLowClass::S_EventHandler::get_Instance()->is_GameToQuit(GameMainEvent))
+			if(ProjectShipwreckHighClass::S_EventHandler::get_Instance()->is_GameToQuit(GameMainEvent))
 			{
 				b_GameShutDown = true;
 			}
@@ -20,6 +20,8 @@ void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 	try
 	{
 	S_ResourceManager::get_Instance()->LoadContent();
+	S_GameModes::get_Instance()->initialize();
+	S_EventHandler::get_Instance()->initialize();
 	}
 	catch(exception GameInitialization)
 	{

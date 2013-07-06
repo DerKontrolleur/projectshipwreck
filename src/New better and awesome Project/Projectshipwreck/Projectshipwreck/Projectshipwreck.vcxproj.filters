@@ -27,6 +27,15 @@
     <ClInclude Include="S_Resourcemanager.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="A_Animation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="S_GameModes.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp">
@@ -39,6 +48,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="S_Resourcemanager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
