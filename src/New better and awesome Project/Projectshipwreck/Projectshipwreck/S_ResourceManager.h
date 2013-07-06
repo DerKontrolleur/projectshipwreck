@@ -8,6 +8,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
 
 #include <string>
 
@@ -22,16 +23,16 @@ namespace ProjectShipwreckHighClass {
 	class S_ResourceManager
 	{
 	private:
+		// Pictures
 		SDL_Surface * screen;	// A pointer to the SDL_Surface that saves the screen
-		Mix_Music* music;	// A pointer to the SDL_Surface that saves the game music
+		unordered_map<string, SDL_Surface*> Pictures;	// Used to get pictures with a keyword
 
 		// Sounds
-		Mix_Chunk* scratch;
-		Mix_Chunk* high;
-		Mix_Chunk* med;
-		Mix_Chunk* low;
+		unordered_map<string, Mix_Music*> Music;
+		unordered_map<string, Mix_Chunk*> Sounds;
 
-		unordered_map<string, SDL_Surface*> Pictures;	// Used to get pictures with a keyword
+		// Fonts
+		TTF_Font* font;
 
 		S_ResourceManager()
 		{
@@ -42,6 +43,26 @@ namespace ProjectShipwreckHighClass {
 			catch (exception sdlINIT) {
 				cout << "<S_ResourceManager::Constructor>: error setting up SDL" << endl;
 			}
+
+			//Initialize SDL_ttf
+			try {
+				TTF_Init();
+			}
+			catch (exception sdlTTF) {
+				cout << "<S_ResourceManager::Constructor>: error setting up TTF" << endl;
+			}
+
+			// Set color of SDL_Font
+			SDL_Color textColor = { 255, 255, 255 };
+
+			//Initialize SDL_mixer
+			try {
+				Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096);
+			}
+			catch (exception sdlMixer) {
+				cout << "<S_ResourceManager::Constructor>: error setting up sound" << endl;
+			}
+   
 
 			SDL_WM_SetCaption("projectshipwreck", NULL); // Name that is displayed in game window
 
@@ -60,6 +81,8 @@ namespace ProjectShipwreckHighClass {
 		~S_ResourceManager()
 		{
 			this->Pictures.clear();
+			this->Music.clear();
+			this->Sounds.clear();
 
 			cout << "S_ResourceManager destroyed" << endl;
 		}
@@ -73,10 +96,13 @@ namespace ProjectShipwreckHighClass {
 
 
 		void LoadImage(string key, string filename);
-		void LoadSound();
+		void LoadSound(string key, string filename);
+		void LoadMusic(string key, string filename);
+		void LoadFont(string filename, int size);
 		void ApplyPicture(int positionX, int positionY, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip = NULL);
-		void LoadContent(); // Call once at the beginning to load everything
-		void UpadteScreen() { SDL_Flip(this->screen); } // Call after any picture is changed
+		void LoadContent();		// Call once at the beginning to load everything
+		void Clean();	// Call once when closing the game
+		void UpadteScreen() { SDL_Flip(this->screen); }		// Call after any picture is changed
 
 		SDL_Surface* GetScreen() const { return this->screen; }
 		void SetScreen(SDL_Surface* screen) { this->screen = screen; }
