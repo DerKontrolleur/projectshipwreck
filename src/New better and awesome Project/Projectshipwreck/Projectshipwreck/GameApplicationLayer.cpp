@@ -17,7 +17,14 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 
 void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 {
+	try
+	{
 	RessourceManager::Instance()->LoadContent();
+	}
+	catch(exception GameInitialization)
+	{
+		cout << "GameInitialization failed badly!" << endl;
+	}
 }
 
 void ProjectShipwreckHighClass::GameApplicationLayer::close_GameResources()

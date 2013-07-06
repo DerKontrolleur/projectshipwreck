@@ -24,8 +24,8 @@ namespace ProjectShipwreckHighClass
 		~GameApplicationLayer(){}//Der Dekonstruktor der GameApplicationKlasse, er tut eigentlich nichts
 		GameApplicationLayer(const GameApplicationLayer &){}// Der Kopierkonstruktor der Klasse GameAppliactionLayer
 		void main_Loop();// Diese Funktion beinhält den Übergeordneten Verlauf des Spiels, das Spiel wird darin ausgeführt
-		void initialize_GameResources();
-		void close_GameResources();
+		void initialize_GameResources();// Initialisiert alle Game relevanten Datein, ließt Spielerdaten ein und läd eventuelle Spielstände
+		void close_GameResources();// Sicheres Schließen der Applikation
 
 
 	};
