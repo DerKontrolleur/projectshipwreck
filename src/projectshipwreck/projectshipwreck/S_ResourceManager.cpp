@@ -8,7 +8,7 @@ void S_ResourceManager::LoadImage(e_Image key, string filename) {
 	try {
 		loadedImage = IMG_Load(filename.c_str());
 		if(loadedImage == NULL) {
-			throw "<RessourceManager::LoadImage>: cannot find image";
+			throw "<RessourceManager::LoadImage>: Cannot find image. Maybe a wrong filename?";
 		}
 
 		optimizedImage = SDL_DisplayFormat(loadedImage);
@@ -20,7 +20,11 @@ void S_ResourceManager::LoadImage(e_Image key, string filename) {
 		cerr << "Error: " << strException << endl;
 	}
 
-	this->Pictures.insert(make_pair(key, optimizedImage));
+	this->Pictures.insert(make_pair(key, optimizedImage)); // Save picture to a map together with a key file to access it
+
+	// Free used space
+	loadedImage = NULL;
+	optimizedImage = NULL;
 	SDL_FreeSurface( loadedImage );
 	SDL_FreeSurface( optimizedImage );
 }
@@ -32,7 +36,7 @@ void S_ResourceManager::LoadMusic(e_Audio key, string filename) {
 	try {
 		loadedMusic = Mix_LoadMUS(filename.c_str());
 		if(loadedMusic == NULL) {
-			throw "<RessourceManager::LoadMusic>: cannot find soundfile";
+			throw "<RessourceManager::LoadMusic>: Cannot find soundfile. Maybe a wrong fielname?";
 		}
 	}
 	catch (char* strException) {
@@ -49,7 +53,7 @@ void S_ResourceManager::LoadSound(e_Audio key, string filename) {
 	try {
 		loadedSound = Mix_LoadWAV(filename.c_str());
 		if(loadedSound == NULL) {
-			throw "<RessourceManager::LoadSound>: cannot find soundfile";
+			throw "<RessourceManager::LoadSound>: Cannot find soundfile. Maybe a wrong filename?";
 		}
 	}
 	catch (char* strException) {
@@ -64,7 +68,7 @@ void S_ResourceManager::LoadFont(string filename, int size) {
 	try {
 		this->font = TTF_OpenFont(filename.c_str(), size);
 		if(font == NULL) {
-			throw "<RessourceManager::LoadFont>: cannot find font";
+			throw "<RessourceManager::LoadFont>: Cannot find font. Maybe a wrong filename?";
 		}
 	}
 	catch (char* strException) {
@@ -106,23 +110,29 @@ void S_ResourceManager::LoadContent() {
 
 
 void S_ResourceManager::Clean() {
-	/*if(this->Pictures.size() > 0) {
-		for(this->pictures_it = this->Pictures.begin(); this->pictures_it != this->Pictures.end(); this->pictures_it++) {
+	if(this->Pictures.size() > 0) {
+		for(this->pictures_it = this->Pictures.begin(); this->pictures_it != this->Pictures.end(); ++this->pictures_it) {
+			this->pictures_it->second = NULL;
 			SDL_FreeSurface(this->pictures_it->second);
+			this->pictures_it->second = NULL;
 		}
 	}
 
 	if(this->Music.size() > 0) {
-		for(this->music_it = this->Music.begin(); this->music_it != Music.end(); this->music_it++) {
+		for(this->music_it = this->Music.begin(); this->music_it != Music.end(); ++this->music_it) {
+			this->music_it->second = NULL;
 			Mix_FreeMusic(this->music_it->second);
+			this->music_it->second = NULL;
 		}
 	}
 
 	if(this->Sounds.size() > 0) {
-		for(this->sounds_it = this->Sounds.begin(); this->sounds_it != Sounds.end(); this->sounds_it++) {
+		for(this->sounds_it = this->Sounds.begin(); this->sounds_it != Sounds.end(); ++this->sounds_it) {
+			this->sounds_it->second = NULL;
 			Mix_FreeChunk(this->sounds_it->second);
+			this->sounds_it->second = NULL;
 		}
-	}*/
+	}
 
 	this->Pictures.clear();
 	this->Music.clear();

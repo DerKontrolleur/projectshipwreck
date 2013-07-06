@@ -82,6 +82,8 @@ namespace ProjectShipwreckHighClass
 				cerr << "Error: " << strException << endl;
 			}
 		}
+		S_ResourceManager(const S_ResourceManager&) {}
+		S_ResourceManager& operator=(const S_ResourceManager&) {}
 
 	public:
 		~S_ResourceManager()
