@@ -20,6 +20,7 @@ namespace ProjectShipwreckHighClass
 		ProjectShipwreckEnumerations::GAMEMAINMODES CURRENTMODE;
 		ProjectShipwreckEnumerations::WEATHERTYPE CURRENTWEATHER;
 		S_GameModes():CURRENTMODE(ProjectShipwreckEnumerations::MENUE),CURRENTWEATHER(ProjectShipwreckEnumerations::SUN){}
+		S_GameModes(ProjectShipwreckEnumerations::GAMEMAINMODES initGAMEMODE,ProjectShipwreckEnumerations::WEATHERTYPE initWEATHERTYPE):CURRENTMODE(initGAMEMODE),CURRENTWEATHER(initWEATHERTYPE){}
 		~S_GameModes(){}
 	public:
 		static S_GameModes * get_Instance(){static S_GameModes Instance;return &Instance;}

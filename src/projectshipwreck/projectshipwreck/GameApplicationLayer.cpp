@@ -31,5 +31,7 @@ void ProjectShipwreckHighClass::GameApplicationLayer::initialize_GameResources()
 
 void ProjectShipwreckHighClass::GameApplicationLayer::close_GameResources()
 {
+	ProjectShipwreckLowClass::SaveAndLoad TempSaveInstance;
+	TempSaveInstance.save_AllGameFiles();
 
 }

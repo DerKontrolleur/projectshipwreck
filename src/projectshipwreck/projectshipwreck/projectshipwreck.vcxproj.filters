@@ -45,6 +45,9 @@
     <ClInclude Include="Vector2D.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="SaveAndLoad.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApplicationLayer.cpp">
@@ -66,6 +69,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="S_InputManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveAndLoad.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
