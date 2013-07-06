@@ -12,6 +12,7 @@
 #include "S_EventHandler.h"
 #include "S_GameModes.h"
 #include "Update.h"
+#include "SaveAndLoad.h"
 
 namespace ProjectShipwreckHighClass
 {
