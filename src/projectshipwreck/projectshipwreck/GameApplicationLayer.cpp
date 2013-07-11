@@ -8,7 +8,6 @@ void ProjectShipwreckHighClass::GameApplicationLayer::main_Loop()
 		{
 			if(ProjectShipwreckHighClass::S_EventHandler::get_Instance()->is_GameToQuit(GameMainEvent))
 			{
-				cout << "Ich bin hier" << endl;
 				b_GameShutDown = true;
 			}
 		}
